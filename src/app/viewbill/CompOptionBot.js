@@ -9,6 +9,12 @@ export default CompOptionBot = (props) => {
   let tax = Math.trunc((props.subTotal/100)*10)
   let discount = 0
   let totalGrand = (props.subTotal+serviceCharge+tax)-discount
+  let objCompOption = {
+    serviceCharge,
+    tax,
+    discount,
+    totalGrand
+  }
   return (
     /* List Menu (Status , Name dan Price) */
     <View style={{

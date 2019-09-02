@@ -51,6 +51,29 @@ export default Transaction = (state = initialState, action) => {
         isLoading: false
       }
       break
+
+    //Untuk Transaction EDIT 
+    case 'EDIT_TRANSACTION_PENDING':
+      return {
+        ...state,
+        isLoading: true
+      }
+      break
+    case 'EDIT_TRANSACTION_FULFILLED':
+      return {
+        ...state,
+        dataItem: action.payload.data,
+        message: action.payload.data.message,
+        isLoading: false
+      }
+      break
+    case 'EDIT_TRANSACTION_REJECTED':
+      return {
+        ...state,
+        message: action.payload.data.message,
+        isLoading: false
+      }
+      break
     default:
       return state
       break

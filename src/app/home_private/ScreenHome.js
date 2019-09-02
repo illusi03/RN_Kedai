@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity, FlatList, Image, ScrollView, ActivityIndicator, ToastAndroid } from 'react-native'
 import IconIon from 'react-native-vector-icons/Ionicons'
 import IconAntDesign from 'react-native-vector-icons/AntDesign'
-
+import IconMaterialCom from 'react-native-vector-icons/MaterialCommunityIcons'
 import axios from 'axios'
-import Constanta,{convertToRupiah} from '../../res/Constant'
+import Constanta, { convertToRupiah } from '../../res/Constant'
 
 import { Styles, Color } from '../../res/Styles'
 import AsyncStorage from '@react-native-community/async-storage';
@@ -23,6 +23,9 @@ class ScreenHome extends Component {
     initNameCategory: 'All',
     startedMenus: [],
     toogleStarted: ''
+  }
+  aksiListOrder = async () => {
+    await this.props.navigation.navigate('SwitchBill')
   }
   getNoMeja = async () => {
     try {
@@ -86,16 +89,21 @@ class ScreenHome extends Component {
         ToastAndroid.show('Berhasil Menambahkan Order', ToastAndroid.SHORT);
         this.props.dispatch(addOrder(dataJadi))
       } else {
-        //Ambil dulu jumlah Qty nya, lalu Tambahkan + 1
-        //Patch Data Where IDOrderNya
-        let idOrderNya = jmlMenuDataByTrans.data.id
-        let jmlDataNya = jmlMenuDataByTrans.data.qty
-        jmlDataNya = jmlDataNya + 1
-        const dataJadi = {
-          qty: jmlDataNya
+        if (jmlMenuDataByTrans.data.status == null) {
+          //Ambil dulu jumlah Qty nya, lalu Tambahkan + 1
+          //Patch Data Where IDOrderNya
+          let idOrderNya = jmlMenuDataByTrans.data.id
+          let jmlDataNya = jmlMenuDataByTrans.data.qty
+          jmlDataNya = jmlDataNya + 1
+          const dataJadi = {
+            qty: jmlDataNya
+          }
+          ToastAndroid.show(`Berhasil Menambahkan Order , Jumlah : ${jmlDataNya}`, ToastAndroid.SHORT);
+          this.props.dispatch(editOrder(idOrderNya, dataJadi))
+        } else {
+          //Data sudah di confirm
+          ToastAndroid.show(`Data sudah terkonfirmasi , Silakan Tunggu Pesanan Anda`, ToastAndroid.SHORT);
         }
-        ToastAndroid.show(`Berhasil Menambahkan Order , Jumlah : ${jmlDataNya}`, ToastAndroid.SHORT);
-        this.props.dispatch(editOrder(idOrderNya, dataJadi))
       }
     } else {
       alert('Sudah Bayar')
@@ -144,7 +152,7 @@ class ScreenHome extends Component {
           marginBottom: 10,
           flexDirection: 'row'
         }]}>
-          <Text>Table Number #{this.state.noMeja}</Text>
+          <Text>Tbl Num#{this.state.noMeja}</Text>
           <Text style={[Styles.hurufKonten, {
             fontSize: 15,
             fontWeight: 'bold',
@@ -156,11 +164,11 @@ class ScreenHome extends Component {
           </View>
         </View>
 
-        {/* List Kategory */}
+        {/* List Category */}
         <View style={[Styles.content, Styles.cardSimpleContainer, {
           backgroundColor: Color.whiteColor,
           width: '100%',
-          height: 100,
+          height: 75,
           justifyContent: 'center',
           alignItems: 'flex-start',
           marginBottom: 10,
@@ -171,13 +179,14 @@ class ScreenHome extends Component {
             :
             <FlatList
               horizontal={true}
+              showsHorizontalScrollIndicator={false}
               data={this.props.Category.dataItem}
               keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
                 <CompTouchable
                   namaKategori={item.name}
-                  onPress={() => this.aksiCategoryMenus(item.id, item.name)} 
-                  />
+                  onPress={() => this.aksiCategoryMenus(item.id, item.name)}
+                />
               )}
             />
           }
@@ -205,35 +214,41 @@ class ScreenHome extends Component {
               :
               <FlatList
                 data={this.props.Menu.dataItem}
+                showsVerticalScrollIndicator={false}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
-                  <TouchableOpacity style={[Styles.cardSimpleContainer, {
-                    backgroundColor: Color.accentColor,
+                  <View style={[Styles.cardSimpleContainer, {
+                    backgroundColor: Color.whiteColor,
                     justifyContent: 'flex-start',
                     alignItems: 'center',
                     padding: 5,
                     margin: 5,
                     height: 100,
                     flexDirection: 'row',
-                    position: 'relative'
-                  }]}
-                    onPress={() => this.aksiAddOrderMenus(item.id, this.state.idTransaction)}
-                    onLongPress={() => alert('Long Pressed')}
-                  >
-                    {false ?
-                      <IconAntDesign
-                        name='star'
+                    position: 'relative',
+                    borderWidth: 2,
+                    borderColor: Color.darkPrimaryColor
+                  }]}>
+                    <TouchableOpacity style={{
+                      position: 'absolute',
+                      right: 10,
+                      top: 10
+                    }}
+                      onPress={() => this.aksiAddOrderMenus(item.id, this.state.idTransaction)}
+                      onLongPress={() => alert('Long Pressed')}
+                    >
+                      <IconMaterialCom
+                        name='bookmark-multiple-outline'
                         size={30}
-                        color='yellow'
-                        style={{
-                          position: 'absolute',
-                          right: 10,
-                          top: 10
-                        }}
-                      ></IconAntDesign>
-                      : false}
-
-                    <Image source={{ uri: item.image }} style={{ width: 100, height: '100%', marginRight: 20 }}></Image>
+                        color={Color.accentColor}
+                      ></IconMaterialCom>
+                    </TouchableOpacity>
+                    <Image source={{ uri: item.image }} style={{
+                      width: 100,
+                      height: '100%',
+                      marginRight: 20,
+                      borderRadius: 10
+                    }}></Image>
                     <View style={{ flexDirection: 'column' }}>
                       <Text style={[Styles.hurufKonten, {
                         fontSize: 15,
@@ -248,7 +263,7 @@ class ScreenHome extends Component {
                       }]}>
                         {convertToRupiah(item.price)}</Text>
                     </View>
-                  </TouchableOpacity>
+                  </View>
                 )}
               />
             }
@@ -265,9 +280,8 @@ class ScreenHome extends Component {
           flexDirection: 'row'
         }]}>
 
-
           <TouchableOpacity style={[Styles.cardSimpleContainer, {
-            backgroundColor: Color.accentColor,
+            backgroundColor: Color.darkPrimaryColor,
             justifyContent: 'center',
             alignItems: 'center',
             padding: 5,
@@ -276,62 +290,19 @@ class ScreenHome extends Component {
             flex: 1,
             flexDirection: 'row'
           }]}
-            onPress={() => this.props.navigation.navigate('SwitchBill')}
+            onPress={() => this.aksiListOrder()}
           >
             <Text style={[Styles.hurufKonten, {
               fontSize: 15,
               fontWeight: 'bold',
-              textAlign: 'center'
+              textAlign: 'center',
+              color: Color.whiteColor
             }]}>
               LIST ORDER</Text>
           </TouchableOpacity>
 
-
-          {/* Seleksi Button Confirm */}
-          {false ?
-            <TouchableOpacity style={[Styles.cardSimpleContainer, {
-              backgroundColor: Color.accentColor,
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              padding: 5,
-              margin: 5,
-              height: '100%',
-              flexDirection: 'row'
-            }]}
-              onPress={() => alert('CONFIRM')}
-            >
-              <Text style={[Styles.hurufKonten, {
-                fontSize: 15,
-                fontWeight: 'bold',
-                textAlign: 'center'
-              }]}>
-                CONFIRM</Text>
-            </TouchableOpacity>
-            : false
-            // <TouchableOpacity style={[Styles.cardSimpleContainer, {
-            //   backgroundColor: Color.accentColor,
-            //   justifyContent: 'center',
-            //   alignItems: 'center',
-            //   padding: 5,
-            //   margin: 5,
-            //   height: '100%',
-            //   flex:1,
-            //   flexDirection: 'row'
-            // }]}
-            //   onPress={() => this.clearNoMeja()}
-            // >
-            //   <Text style={[Styles.hurufKonten, {
-            //     fontSize: 15,
-            //     fontWeight: 'bold',
-            //     textAlign: 'center'
-            //   }]}>
-            //     CONFIRM</Text>
-            // </TouchableOpacity>
-          }
-          {/* End sleksi Button Conf */}
-
           <TouchableOpacity style={[Styles.cardSimpleContainer, {
-            backgroundColor: Color.accentColor,
+            backgroundColor: Color.darkPrimaryColor,
             justifyContent: 'flex-start',
             alignItems: 'center',
             padding: 5,
@@ -339,12 +310,13 @@ class ScreenHome extends Component {
             height: '100%',
             flexDirection: 'row'
           }]}
-            onPress={() => this.props.navigation.navigate('ScreenViewbill')}
+            onPress={() => this.props.navigation.navigate('SWScreenViewbill')}
           >
             <Text style={[Styles.hurufKonten, {
               fontSize: 15,
               fontWeight: 'bold',
-              textAlign: 'center'
+              textAlign: 'center',
+              color: Color.whiteColor
             }]}>
               VIEW BILL</Text>
           </TouchableOpacity>
@@ -360,7 +332,8 @@ const mapStateToProps = (state) => {
     Menu: state.Menu,
     Category: state.Category,
     Transaction: state.Transaction,
-    Order: state.Order
+    Order: state.Order,
+    Home: state.Home
   }
 }
 

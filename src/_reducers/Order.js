@@ -99,6 +99,15 @@ export default Order = (state = initialState, action) => {
       }
       break
 
+    //Edit 
+    case 'SET_ORDER_STATUS':
+      return {
+        ...state,
+        dataItem: null,
+        isLoading: false
+      }
+      break
+
     default:
       return state
       break

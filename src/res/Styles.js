@@ -9,7 +9,9 @@ export const Color = {
   primaryTextColor : '#212121',
   secondaryTextColor : '#757575',
   deviderColor : '#BDBDBD',
-  whiteColor : '#FFFFFF'
+  whiteColor : '#FFFFFF',
+  errorColor : '#E53935',
+  successColor: '#018786'
 }
 export const Styles = StyleSheet.create({
   container : {

@@ -42,3 +42,17 @@ export const deleteOrder = (id) => {
     })
   }
 }
+export const setOrderStatus = (transactionId,dataJadi) => {
+  return {
+    type: 'SET_ORDER_STATUS',
+    payload: axios({
+      url: `${Constanta.host}/orderStatus/${transactionId}`,
+      method: 'PATCH',
+      data: dataJadi,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+  }
+}

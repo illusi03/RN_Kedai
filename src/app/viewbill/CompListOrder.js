@@ -20,7 +20,9 @@ const CompListOrder = (props) => {
         fontWeight: '300',
         flex: 1,
       }]}>
-        {props.status ? props.status : 'Not Confirm'}
+        {props.status == null ? `Not Confirm` :
+          props.status == 0 ? `Waiting` : `Confirmed`
+        }
       </Text>
       <Text style={[Styles.hurufKonten, {
         fontSize: 14,
@@ -37,7 +39,7 @@ const CompListOrder = (props) => {
         fontSize: 14,
         fontWeight: '300',
         flex: 1
-      }]}>{convertToRupiah(props.price*props.qty)}</Text>
+      }]}>{convertToRupiah(props.price * props.qty)}</Text>
     </View>
   )
 }

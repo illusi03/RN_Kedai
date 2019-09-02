@@ -8,11 +8,12 @@ class CompTouchable extends Component {
   render() {
     return (
       <TouchableOpacity style={[Styles.cardSimpleContainer,{
-        backgroundColor: Color.accentColor,
+        backgroundColor: Color.darkPrimaryColor,
         justifyContent: 'center',
         alignItems: 'center',
         padding: 5,
-        margin:5
+        margin:5,
+        width:100
       }]}
       onPress={this.props.onPress}
       onLongPress={this.props.onLongPress}
@@ -20,7 +21,8 @@ class CompTouchable extends Component {
         <Text style={[Styles.hurufKonten, {
           fontSize: 15,
           fontWeight: 'bold',
-          textAlign: 'center'
+          textAlign: 'center',
+          color:Color.whiteColor
         }]}>
           {this.props.namaKategori}</Text>
       </TouchableOpacity>
