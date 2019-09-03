@@ -10,16 +10,16 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 
 ## Gambar Aplikasi
 <p float="left">
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-10-11.png" width="200" height="350" alt="Choose a Service Type"/>
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-10-22.png" width="200" height="350" alt="Pick Location"/>
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-10-24.png" width="200" height="350" alt="Finding the truck"/>
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-10-27.png" width="200" height="350" alt="Order History"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-42-16.png" width="200" height="350" alt="Choose a Service Type"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-42-55.png" width="200" height="350" alt="Pick Location"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-44-38.png" width="200" height="350" alt="Finding the truck"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-44-45.png" width="200" height="350" alt="Order History"/>
 </p>
 <p float="left">
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-10-52.png" width="200" height="350" alt="Choose a Service Type"/>
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-10-58.png" width="200" height="350" alt="Pick Location"/>
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-11-03.png" width="200" height="350" alt="Finding the truck"/>
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-05-11-06.png" width="200" height="350" alt="Order History"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-44-59.png" width="200" height="350" alt="Choose a Service Type"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-45-03.png" width="200" height="350" alt="Pick Location"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-45-15.png" width="200" height="350" alt="Finding the truck"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-45-20.png" width="200" height="350" alt="Order History"/>
 </p>
 
 ## Fitur 
