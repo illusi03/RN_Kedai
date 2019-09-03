@@ -1,7 +1,8 @@
 initialState = {
   dataItem: '',
   message: '',
-  isLoading: true
+  isLoading: true,
+  dataAsli: ''
 }
 
 export default Transaction = (state = initialState, action) => {
@@ -72,6 +73,14 @@ export default Transaction = (state = initialState, action) => {
         ...state,
         message: action.payload.data.message,
         isLoading: false
+      }
+      break
+
+    //SET DATA TRANSAKSI UNTUK DIINPUT
+    case 'SET_TRANSACTION_INPUT':
+      return {
+        ...state,
+        dataAsli : action.payload
       }
       break
     default:

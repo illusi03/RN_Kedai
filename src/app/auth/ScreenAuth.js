@@ -9,7 +9,7 @@ import { addTransaction } from '../../_actions/Transaction'
 
 class ScreenLogin extends Component {
   state = {
-    textTblNumber: 'Kosong'
+    textTblNumber: ''
   }
   aksiChangeText = (text) => {
     this.setState({
@@ -17,14 +17,18 @@ class ScreenLogin extends Component {
     })
   }
   aksiSubmit = async () => {
-    await AsyncStorage.setItem('noMeja', `${this.state.textTblNumber}`)
-    //Tambah Data table transaction (Just a tableNumber)
-    await this.props.dispatch(addTransaction({
-      tableNumber: this.state.textTblNumber,
-      isPaid:false
-    }))
-    await AsyncStorage.setItem('idTransaction', `${this.props.Transaction.dataItem.data.id}`)
-    await this.props.navigation.navigate('StackPrivate')
+    if (this.state.textTblNumber != '') {
+      await AsyncStorage.setItem('noMeja', `${this.state.textTblNumber}`)
+      //Tambah Data table transaction (Just a tableNumber)
+      await this.props.dispatch(addTransaction({
+        tableNumber: this.state.textTblNumber,
+        isPaid: false
+      }))
+      await AsyncStorage.setItem('idTransaction', `${this.props.Transaction.dataItem.data.id}`)
+      await this.props.navigation.navigate('StackPrivate')
+    }else{
+      alert('Masukan Nomor Meja Terlebih Dahulu')
+    }
   }
   render() {
     return (
@@ -40,15 +44,15 @@ class ScreenLogin extends Component {
           justifyContent: 'center',
           alignItems: 'center'
         }]}>
-          
+
           <Text style={[Styles.hurufKonten, {
             fontSize: 18,
             fontWeight: 'bold',
-          }]}>Harap Login Terlebih Dahulu</Text>
+          }]}>Please enter table number </Text>
           <View style={{ width: 250, marginTop: 10 }}>
             <CosEdit
-              label='Nomor Meja'
-              placeholder='Masukan Nomor Mejanya'
+              label='Table Num'
+              placeholder='Enter table number here'
               keyboardType='numeric'
               onChangeText={this.aksiChangeText}
             />

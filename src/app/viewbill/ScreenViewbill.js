@@ -20,31 +20,34 @@ class ScreenViewbill extends Component {
     // PATCH tbl transaksi berdasarkan ID
     // Data yg dipatch {Sub_total,discount,serviceCharge,tax,total,isPaid}
     // Insert tbl transaksi {no_tbl,isPaid=false}, ambil IDTransaksi simpan di Async idTransaction
-    // this.props.dispatch(editTransaction(this.props.Transaction.id,))
+
+    await this.props.dispatch(editTransaction(this.props.Transaction.dataItem.id, this.props.Transaction.dataAsli))
     await this.props.navigation.navigate('SWScreenPay')
   }
   getOrderList = async () => {
     const idTrans = await AsyncStorage.getItem('idTransaction')
     await this.props.dispatch(getTransaction(idTrans))
     let tempSubTotal = 0
-    if (this.props.Transaction.dataItem.orders) {
-      this.props.Transaction.dataItem.orders.map((item, index) => {
-        let tmpJumlahHarga = item.price * item.qty
-        tempSubTotal += tmpJumlahHarga
-        if (item.status == null) {
+    if (!this.props.Transaction.isLoading) {
+      if (this.props.Transaction.dataItem.orders) {
+        this.props.Transaction.dataItem.orders.map((item, index) => {
+          let tmpJumlahHarga = item.price * item.qty
+          tempSubTotal += tmpJumlahHarga
+          if (item.status == null) {
+            this.setState({
+              isAdaBarang: false
+            })
+          }
           this.setState({
-            isAdaBarang: false
+            isKosongPisan: false
           })
-        }
-        this.setState({
-          isKosongPisan: false
         })
+      }
+      await this.setState({
+        subStateTotal: tempSubTotal,
+        isLoading: this.props.Transaction.isLoading
       })
     }
-    await this.setState({
-      subStateTotal: tempSubTotal,
-      isLoading: this.props.Transaction.isLoading
-    })
   }
   componentDidMount() {
     this.getOrderList()

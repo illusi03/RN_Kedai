@@ -99,12 +99,13 @@ class ScreenCart extends Component {
             await this.setState({
               isAdaBarang: true
             })
-          } else {
-            await this.setState({
-              isAdaBarang: false
-            })
           }
         })
+        if(this.props.Transaction.dataItem.orders.length <= 0){
+          await this.setState({
+            isAdaBarang: false
+          })
+        }
       }
     } catch (e) {
       console.log(e)

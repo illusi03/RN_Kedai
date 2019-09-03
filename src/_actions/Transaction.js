@@ -35,3 +35,9 @@ export const editTransaction = (transactionId,data) => {
     })
   }
 }
+export const setTransactionInput = (data) => {
+  return {
+    type: 'SET_TRANSACTION_INPUT',
+    payload: data
+  }
+}
