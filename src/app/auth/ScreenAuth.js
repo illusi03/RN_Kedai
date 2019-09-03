@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, Image } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage';
 import { connect } from 'react-redux'
 
@@ -26,7 +26,7 @@ class ScreenLogin extends Component {
       }))
       await AsyncStorage.setItem('idTransaction', `${this.props.Transaction.dataItem.data.id}`)
       await this.props.navigation.navigate('StackPrivate')
-    }else{
+    } else {
       alert('Masukan Nomor Meja Terlebih Dahulu')
     }
   }
@@ -42,22 +42,31 @@ class ScreenLogin extends Component {
           width: '100%',
           height: 250,
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          position:'relative'
         }]}>
-
+          <View style={{
+            position:'absolute',
+            width:100,
+            height:100,
+            borderColor:Color.darkPrimaryColor,
+            top:-50,
+          }}>
+            <Image source={require('../../assets/Icon/logo_login.png')} style={{ width: '100%', height: '100%' }}></Image>
+          </View>
           <Text style={[Styles.hurufKonten, {
             fontSize: 18,
             fontWeight: 'bold',
           }]}>Please enter table number </Text>
-          <View style={{ width: 250, marginTop: 10 }}>
+          <View style={{ width: '50%', marginTop: 10 }}>
             <CosEdit
               label='Table Num'
-              placeholder='Enter table number here'
+              placeholder='Enter table '
               keyboardType='numeric'
               onChangeText={this.aksiChangeText}
             />
           </View>
-          <View style={{ width: '100%', marginTop: 10, flexDirection: 'row' }}>
+          <View style={{ width: '80%', marginTop: 10, flexDirection: 'row' }}>
             <View style={{ flex: 1, marginHorizontal: 5 }}>
               <CosButton label='Submit' onPress={this.aksiSubmit} />
             </View>

@@ -157,10 +157,10 @@ class ScreenHome extends Component {
             fontSize: 15,
             fontWeight: 'bold',
             textAlign: 'center'
-          }]}>Kedai Dumbways</Text>
+          }]}>Kedai PapaLapar</Text>
           <View style={{ flexDirection: 'row' }}>
             <IconIon name='md-timer' size={17} style={{ marginRight: 5 }}></IconIon>
-            <Text>0:40:40</Text>
+            <Text>0:10:20</Text>
           </View>
         </View>
 

@@ -16,9 +16,8 @@ class ScreenPay extends Component {
     await this.setState({
       noMeja
     })
+    await AsyncStorage.clear()
     this.backHandler = await BackHandler.addEventListener('hardwareBackPress', async () => {
-      //Clear Async
-      await AsyncStorage.clear()
       await BackHandler.exitApp();
       return true;
     });

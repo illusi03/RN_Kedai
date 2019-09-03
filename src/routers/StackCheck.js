@@ -10,9 +10,9 @@ export default class StackCheck extends Component {
     try {
       const x = await AsyncStorage.getItem('noMeja');
       if (x != null) {
-        this.props.navigation.navigate('StackPrivate')
+        await this.props.navigation.navigate('StackPrivate')
       } else {
-        this.props.navigation.navigate('StackPublic')
+        await this.props.navigation.navigate('StackPublic')
       }
     } catch (e) { 
       alert(e)

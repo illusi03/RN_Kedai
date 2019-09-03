@@ -13,7 +13,7 @@ export const CosEdit = (props) => {
       {props.label ?
         <Text style={[Styles.hurufKonten, { fontWeight: 'bold', marginRight: 5 }]}>{props.label}</Text>
         : false}
-      <TextInput style={{
+      <TextInput style={[{
         backgroundColor: Color.accentColor,
         color: Color.whiteColor,
         fontSize: 16,
@@ -27,7 +27,7 @@ export const CosEdit = (props) => {
         shadowRadius: 3,
         borderRadius: 3,
         elevation: 4
-      }}
+      }]}
         keyboardType={props.keyboardType}
         secureTextEntry={props.secureTextEntry}
         onChangeText={props.onChangeText}

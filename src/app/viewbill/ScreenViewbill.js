@@ -71,7 +71,7 @@ class ScreenViewbill extends Component {
             <Text style={[Styles.hurufKonten, {
               fontSize: 20,
               fontWeight: 'bold',
-            }]}>Billing (Kedai Dumbways)</Text>
+            }]}>Billing (Kedai PapaLapar)</Text>
 
             {/* Divider */}
             <View
@@ -219,7 +219,7 @@ class ScreenViewbill extends Component {
               <Text style={[Styles.hurufKonten, {
                 fontSize: 20,
                 fontWeight: 'bold',
-              }]}>Billing (Kedai Dumbways)</Text>
+              }]}>Billing (Kedai PapaLapar)</Text>
               <ActivityIndicator size={30} style={{ flex: 1 }}></ActivityIndicator>
             </View>
             :
