@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, Image } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage';
 import IconMaterial from 'react-native-vector-icons/MaterialIcons'
+import IconIon from 'react-native-vector-icons/Ionicons'
 
 import { Styles, Color } from '../../res/Styles'
 import { getTransaction, editTransaction } from '../../_actions/Transaction'
@@ -68,10 +69,30 @@ class ScreenViewbill extends Component {
             justifyContent: 'flex-start',
             alignItems: 'center'
           }]}>
-            <Text style={[Styles.hurufKonten, {
-              fontSize: 20,
-              fontWeight: 'bold',
-            }]}>Billing (Kedai PapaLapar)</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <TouchableOpacity
+                style={{ flex: 1, alignSelf: 'flex-start' }}
+                onPress={() => this.props.navigation.navigate('ScreenHome')}
+              >
+                <IconIon name='md-arrow-round-back' size={33}></IconIon>
+              </TouchableOpacity>
+              <Text style={[Styles.hurufKonten, {
+                fontSize: 20,
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginBottom: 5,
+                flex: 1
+              }]}>
+                Billing </Text>
+              <Text style={[Styles.hurufKonten, {
+                fontSize: 20,
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginBottom: 5,
+                flex: 1
+              }]}>
+              </Text>
+            </View>
 
             {/* Divider */}
             <View
@@ -216,10 +237,6 @@ class ScreenViewbill extends Component {
           :
           this.state.isLoading ?
             <View>
-              <Text style={[Styles.hurufKonten, {
-                fontSize: 20,
-                fontWeight: 'bold',
-              }]}>Billing (Kedai PapaLapar)</Text>
               <ActivityIndicator size={30} style={{ flex: 1 }}></ActivityIndicator>
             </View>
             :
@@ -231,10 +248,30 @@ class ScreenViewbill extends Component {
               justifyContent: 'flex-start',
               alignItems: 'center'
             }]}>
-              <Text style={[Styles.hurufKonten, {
-                fontSize: 20,
-                fontWeight: 'bold',
-              }]}>Billing (Kedai Dumbways)</Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                <TouchableOpacity
+                  style={{ flex: 1, alignSelf: 'flex-start' }}
+                  onPress={() => this.props.navigation.navigate('ScreenHome')}
+                >
+                  <IconIon name='md-arrow-round-back' size={33}></IconIon>
+                </TouchableOpacity>
+                <Text style={[Styles.hurufKonten, {
+                  fontSize: 20,
+                  fontWeight: 'bold',
+                  textAlign: 'center',
+                  marginBottom: 5,
+                  flex: 1
+                }]}>
+                  Billing</Text>
+                <Text style={[Styles.hurufKonten, {
+                  fontSize: 20,
+                  fontWeight: 'bold',
+                  textAlign: 'center',
+                  marginBottom: 5,
+                  flex: 1
+                }]}>
+                </Text>
+              </View>
 
               {/* Divider */}
               <View

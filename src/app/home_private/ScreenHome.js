@@ -152,7 +152,7 @@ class ScreenHome extends Component {
           marginBottom: 10,
           flexDirection: 'row'
         }]}>
-          <Text>Tbl Num#{this.state.noMeja}</Text>
+          <Text style={[Styles.hurufKonten,{fontWeight:'bold'}]}>Tbl Num#{this.state.noMeja}</Text>
           <Text style={[Styles.hurufKonten, {
             fontSize: 15,
             fontWeight: 'bold',
@@ -160,7 +160,7 @@ class ScreenHome extends Component {
           }]}>Kedai PapaLapar</Text>
           <View style={{ flexDirection: 'row' }}>
             <IconIon name='md-timer' size={17} style={{ marginRight: 5 }}></IconIon>
-            <Text>0:10:20</Text>
+            <Text style={[Styles.hurufKonten,{fontWeight:'bold'}]}>0:10:20</Text>
           </View>
         </View>
 
@@ -179,7 +179,7 @@ class ScreenHome extends Component {
             :
             <FlatList
               horizontal={true}
-              showsHorizontalScrollIndicator={false}
+              showsHorizontalScrollIndicator={true}
               data={this.props.Category.dataItem}
               keyExtractor={(item) => item.id.toString()}
               renderItem={({ item }) => (
@@ -214,7 +214,7 @@ class ScreenHome extends Component {
               :
               <FlatList
                 data={this.props.Menu.dataItem}
-                showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator={true}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                   <View style={[Styles.cardSimpleContainer, {

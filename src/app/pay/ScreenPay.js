@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, Image, BackHandler, ScrollView } from 'react-native'
 import IconMaterial from 'react-native-vector-icons/MaterialIcons'
+import IconIon from 'react-native-vector-icons/Ionicons'
 
 import { Styles, Color } from '../../res/Styles'
 import AsyncStorage from '@react-native-community/async-storage';
@@ -9,12 +10,15 @@ import { getTransaction, editTransaction } from '../../_actions/Transaction'
 
 class ScreenPay extends Component {
   state = {
-    noMeja: 0
+    noMeja: 0,
+    idTransaction:0
   }
   getNoMeja = async () => {
+    const idTransaction = await AsyncStorage.getItem('idTransaction')
     const noMeja = await AsyncStorage.getItem('noMeja')
     await this.setState({
-      noMeja
+      noMeja,
+      idTransaction
     })
     await AsyncStorage.clear()
     this.backHandler = await BackHandler.addEventListener('hardwareBackPress', async () => {
@@ -42,10 +46,22 @@ class ScreenPay extends Component {
             justifyContent: 'flex-start',
             alignItems: 'center'
           }]}>
-            <Text style={[Styles.hurufKonten, {
-              fontSize: 20,
-              fontWeight: 'bold',
-            }]}>Payment Session</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <TouchableOpacity
+                style={{  alignSelf: 'flex-start' }}
+                onPress={() => BackHandler.exitApp()}
+              >
+                <IconIon name='md-arrow-round-back' size={33}></IconIon>
+              </TouchableOpacity>
+              <Text style={[Styles.hurufKonten, {
+                fontSize: 20,
+                fontWeight: 'bold',
+                textAlign: 'center',
+                marginBottom: 5,
+                flex: 1
+              }]}>
+                Payment Session</Text>
+            </View>
 
             {/* Divider */}
             <View
@@ -96,16 +112,23 @@ class ScreenPay extends Component {
                 fontWeight: 'bold',
                 marginBottom: 5
               }]}>
-                Thank you
+                With Transaction ID : {this.state.idTransaction}
               </Text>
               <Text style={[Styles.hurufKonten, {
+                fontSize: 17,
+                fontWeight: 'bold',
+                marginBottom: 5
+              }]}>
+                Thank you
+              </Text>
+              {/* <Text style={[Styles.hurufKonten, {
                 fontSize: 17,
                 fontWeight: 'bold',
                 marginBottom: 25,
                 textAlign: 'center'
               }]}>
                 Press back to clear Internal storage and new transaction
-              </Text>
+              </Text> */}
               <Text style={[Styles.hurufKonten, {
                 fontSize: 16,
                 fontWeight: 'bold',

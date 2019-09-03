@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity, FlatList, Image, ScrollView, ActivityIndicator, Alert } from 'react-native'
 import axios from 'axios'
 import AsyncStorage from '@react-native-community/async-storage';
+import IconIon from 'react-native-vector-icons/Ionicons'
 import IconFa from 'react-native-vector-icons/FontAwesome5'
 import IconOctic from 'react-native-vector-icons/Octicons'
 
@@ -101,7 +102,7 @@ class ScreenCart extends Component {
             })
           }
         })
-        if(this.props.Transaction.dataItem.orders.length <= 0){
+        if (this.props.Transaction.dataItem.orders.length <= 0) {
           await this.setState({
             isAdaBarang: false
           })
@@ -137,7 +138,7 @@ class ScreenCart extends Component {
       })
     }
     await this.setState({
-      isLoading:this.props.Transaction.isLoading
+      isLoading: this.props.Transaction.isLoading
     })
   }
   componentDidMount() {
@@ -158,14 +159,30 @@ class ScreenCart extends Component {
           marginBottom: 5,
           flex: 1
         }]}>
-          <Text style={[Styles.hurufKonten, {
-            fontSize: 20,
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginBottom: 5
-          }]}>
-            List Order
-          </Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <TouchableOpacity
+              style={{ flex: 1, alignSelf: 'flex-start' }}
+              onPress={()=> this.props.navigation.navigate('ScreenHome')}
+            >
+              <IconIon name='md-arrow-round-back' size={32}></IconIon>
+            </TouchableOpacity>
+            <Text style={[Styles.hurufKonten, {
+              fontSize: 20,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              marginBottom: 5,
+              flex: 1
+            }]}>
+              List Order</Text>
+            <Text style={[Styles.hurufKonten, {
+              fontSize: 20,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              marginBottom: 5,
+              flex: 1
+            }]}>
+            </Text>
+          </View>
 
           {/* Divider */}
           <View
@@ -236,7 +253,7 @@ class ScreenCart extends Component {
                           fontWeight: 'bold',
                           textAlign: 'center'
                         }]}>
-                          ({convertToRupiah(item.menu.price*item.qty)})</Text>
+                          ({convertToRupiah(item.menu.price * item.qty)})</Text>
                       </View>
                       <TouchableOpacity
                         onPress={() => this.aksiAddOrderMenus(item.menu.id, this.props.Transaction.dataItem.id)}
