@@ -13,7 +13,8 @@ class ScreenViewbill extends Component {
   state = {
     subStateTotal: 0,
     isAdaBarang: true,
-    isKosongPisan: true
+    isKosongPisan: true,
+    isLoading: true
   }
   aksiCallBill = async () => {
     // PATCH tbl transaksi berdasarkan ID
@@ -41,7 +42,8 @@ class ScreenViewbill extends Component {
       })
     }
     await this.setState({
-      subStateTotal: tempSubTotal
+      subStateTotal: tempSubTotal,
+      isLoading: this.props.Transaction.isLoading
     })
   }
   componentDidMount() {
@@ -55,7 +57,7 @@ class ScreenViewbill extends Component {
         padding: 10
       }]}>
 
-        {!this.state.isKosongPisan & !this.props.Transaction.isLoading ?
+        {!this.state.isKosongPisan & !this.state.isLoading ?
           <View style={[Styles.content, Styles.cardSimpleContainer, {
             backgroundColor: Color.whiteColor,
             width: '100%',
@@ -110,7 +112,7 @@ class ScreenViewbill extends Component {
               }]}>Sum Price</Text>
             </View>
 
-            {this.props.Transaction.isLoading ?
+            {this.state.isLoading ?
               <ActivityIndicator size={30} style={{ flex: 1 }}></ActivityIndicator>
               :
               <FlatList
@@ -209,7 +211,7 @@ class ScreenViewbill extends Component {
             </View>
           </View>
           :
-          this.props.Transaction.isLoading ?
+          this.state.isLoading ?
             <View>
               <Text style={[Styles.hurufKonten, {
                 fontSize: 20,

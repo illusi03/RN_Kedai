@@ -17,7 +17,8 @@ import { addOrder, editOrder, deleteOrder, setOrderStatus } from '../../_actions
 class ScreenCart extends Component {
   state = {
     tableNumber: '',
-    isAdaBarang: false
+    isAdaBarang: false,
+    isLoading: true
   }
   aksiAddOrderMenus = async (menuId, transactionId) => {
     //Cari data Jika isPaid false , Input Order.
@@ -134,6 +135,9 @@ class ScreenCart extends Component {
         }
       })
     }
+    await this.setState({
+      isLoading:this.props.Transaction.isLoading
+    })
   }
   componentDidMount() {
     this.getNomorTable()
@@ -176,7 +180,7 @@ class ScreenCart extends Component {
           />
 
 
-          {this.props.Transaction.isLoading ?
+          {this.state.isLoading ?
             <ActivityIndicator style={{
               flex: 1
             }} size={30}></ActivityIndicator>
