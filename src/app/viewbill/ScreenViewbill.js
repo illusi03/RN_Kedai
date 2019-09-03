@@ -20,6 +20,7 @@ class ScreenViewbill extends Component {
     // Data yg dipatch {Sub_total,discount,serviceCharge,tax,total,isPaid}
     // Insert tbl transaksi {no_tbl,isPaid=false}, ambil IDTransaksi simpan di Async idTransaction
     // this.props.dispatch(editTransaction(this.props.Transaction.id,))
+    await this.props.navigation.navigate('SWScreenPay')
   }
   getOrderList = async () => {
     const idTrans = await AsyncStorage.getItem('idTransaction')
