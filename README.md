@@ -9,7 +9,9 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 * Belum tersedia fitur Searching dan sorting
 
 ## GIF Aplikasi
-![Kedai_PapaLapar](https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Kedai_papalapar.gif)
+<p float="center">
+  ![Kedai_PapaLapar](https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Kedai_papalapar.gif)
+ </p>
 
 ## Gambar Aplikasi
 <p float="left">
