@@ -12,3 +12,16 @@ export const convertToRupiah = (angka) => {
 export const convertToAngka = (rupiah) => {
   return parseInt(rupiah.replace(/,.*|[^0-9]/g, ''), 10);
 }
+
+export const convertIntToTime = (given_seconds) => {
+  dateObj = new Date(given_seconds * 1000);
+  hours = dateObj.getUTCHours();
+  minutes = dateObj.getUTCMinutes();
+  seconds = dateObj.getSeconds();
+  timeString = hours.toString().padStart(2, '0') + ':' +
+    minutes.toString().padStart(2, '0') + ':' +
+    seconds.toString().padStart(2, '0');
+  this.setState({
+    waktuNya: timeString
+  })
+}

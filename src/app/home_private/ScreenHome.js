@@ -14,6 +14,7 @@ import { CosButton } from '../../components/Components';
 import { getMenu, getMenuWhereCategory } from '../../_actions/Menu'
 import { getCategory } from '../../_actions/Category'
 import { addOrder, editOrder } from '../../_actions/Order'
+import { setIntervalNya, counterNya } from '../../_actions/Home'
 
 // getMenuWhereCategory
 class ScreenHome extends Component {
@@ -24,6 +25,18 @@ class ScreenHome extends Component {
     startedMenus: [],
     toogleStarted: ''
   }
+
+  convertIntToTime = (given_seconds) => {
+    dateObj = new Date(given_seconds * 1000);
+    hours = dateObj.getUTCHours();
+    minutes = dateObj.getUTCMinutes();
+    seconds = dateObj.getSeconds();
+
+    timeString = hours.toString().padStart(2, '0') + ':' +
+      minutes.toString().padStart(2, '0') + ':' +
+      seconds.toString().padStart(2, '0');
+  }
+
   aksiListOrder = async () => {
     await this.props.navigation.navigate('SwitchBill')
   }
@@ -129,9 +142,15 @@ class ScreenHome extends Component {
   }
 
   componentDidMount() {
+    let timerHandlenya = 
     this.getNoMeja()
     this.props.dispatch(getMenu())
     this.props.dispatch(getCategory())
+    this.props.dispatch(setIntervalNya(
+      setInterval(() => {
+        this.props.dispatch(counterNya(this.props.Home.timer))
+      }, 1000)
+    ))
     // this.cekIsStartedMenus()
   }
   render() {
@@ -152,7 +171,7 @@ class ScreenHome extends Component {
           marginBottom: 10,
           flexDirection: 'row'
         }]}>
-          <Text style={[Styles.hurufKonten,{fontWeight:'bold'}]}>Tbl Num#{this.state.noMeja}</Text>
+          <Text style={[Styles.hurufKonten, { fontWeight: 'bold' }]}>Tbl Num#{this.state.noMeja}</Text>
           <Text style={[Styles.hurufKonten, {
             fontSize: 15,
             fontWeight: 'bold',
@@ -160,7 +179,9 @@ class ScreenHome extends Component {
           }]}>Kedai PapaLapar</Text>
           <View style={{ flexDirection: 'row' }}>
             <IconIon name='md-timer' size={17} style={{ marginRight: 5 }}></IconIon>
-            <Text style={[Styles.hurufKonten,{fontWeight:'bold'}]}>0:10:20</Text>
+            <Text style={[Styles.hurufKonten, { fontWeight: 'bold' }]}>
+              {this.props.Home.timerString}
+            </Text>
           </View>
         </View>
 

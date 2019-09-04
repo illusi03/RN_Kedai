@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, FlatList, ActivityIndicator, Image, BackH
 import IconMaterial from 'react-native-vector-icons/MaterialIcons'
 import IconIon from 'react-native-vector-icons/Ionicons'
 
+import { hapusInterval } from '../../_actions/Home'
 import { Styles, Color } from '../../res/Styles'
 import AsyncStorage from '@react-native-community/async-storage';
 import { getTransaction, editTransaction } from '../../_actions/Transaction'
@@ -11,7 +12,7 @@ import { getTransaction, editTransaction } from '../../_actions/Transaction'
 class ScreenPay extends Component {
   state = {
     noMeja: 0,
-    idTransaction:0
+    idTransaction: 0
   }
   getNoMeja = async () => {
     const idTransaction = await AsyncStorage.getItem('idTransaction')
@@ -28,6 +29,9 @@ class ScreenPay extends Component {
   }
   componentDidMount() {
     this.getNoMeja()
+  }
+  componentWillUnmount() {
+    this.props.dispatch(hapusInterval())
   }
   render() {
     return (
@@ -48,7 +52,7 @@ class ScreenPay extends Component {
           }]}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <TouchableOpacity
-                style={{  alignSelf: 'flex-start' }}
+                style={{ alignSelf: 'flex-start' }}
                 onPress={() => BackHandler.exitApp()}
               >
                 <IconIon name='md-arrow-round-back' size={33}></IconIon>
@@ -139,7 +143,7 @@ class ScreenPay extends Component {
                 fontSize: 15,
                 fontWeight: 'bold',
               }]}>
-                0:59:0
+                {this.props.Home.timerString}
               </Text>
             </View>
           </View>
@@ -149,8 +153,12 @@ class ScreenPay extends Component {
   }
 
 }
-
-export default ScreenPay
+const mapStateToProps = (state) => {
+  return {
+    Home: state.Home
+  }
+}
+export default connect(mapStateToProps)(ScreenPay)
 
 /*
 import React, { Component } from "react";

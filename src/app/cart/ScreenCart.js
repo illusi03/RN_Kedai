@@ -65,11 +65,9 @@ class ScreenCart extends Component {
       let menuData
       transaksiData = await axios.get(`${Constanta.host}/transaction/${transactionId}`)
       menuData = await axios.get(`${Constanta.host}/menu/${menuId}`)
-
       // console.log(`Transaksi Data : ${JSON.stringify(transaksiData)}`)
       // console.log(`Menu Data : ${JSON.stringify(menuData)}`)
       // console.log(`jmlMenuData Data : ${JSON.stringify(jmlMenuDataByTrans)}`)
-
 
 
       if (!transaksiData.data.isPaid) {

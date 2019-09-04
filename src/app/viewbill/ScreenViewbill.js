@@ -7,6 +7,7 @@ import IconIon from 'react-native-vector-icons/Ionicons'
 
 import { Styles, Color } from '../../res/Styles'
 import { getTransaction, editTransaction } from '../../_actions/Transaction'
+import { hapusInterval } from '../../_actions/Home'
 import CompListOrder from './CompListOrder'
 import CompOptionBot from './CompOptionBot'
 
@@ -21,9 +22,15 @@ class ScreenViewbill extends Component {
     // PATCH tbl transaksi berdasarkan ID
     // Data yg dipatch {Sub_total,discount,serviceCharge,tax,total,isPaid}
     // Insert tbl transaksi {no_tbl,isPaid=false}, ambil IDTransaksi simpan di Async idTransaction
-
-    await this.props.dispatch(editTransaction(this.props.Transaction.dataItem.id, this.props.Transaction.dataAsli))
-    await this.props.navigation.navigate('SWScreenPay')
+    try {
+      let objDataAsli = {
+        ...this.props.Transaction.dataAsli,
+        finishedTime:this.props.Home.timerString
+      }
+      await clearInterval(this.props.Home.timerEvent)
+      await this.props.dispatch(editTransaction(this.props.Transaction.dataItem.id, objDataAsli))
+      await this.props.navigation.navigate('SWScreenPay')
+    } catch (e) { }
   }
   getOrderList = async () => {
     const idTrans = await AsyncStorage.getItem('idTransaction')
@@ -319,7 +326,8 @@ class ScreenViewbill extends Component {
 const mapStateToProps = (state) => {
   return {
     Transaction: state.Transaction,
-    Order: state.Order
+    Order: state.Order,
+    Home: state.Home
   }
 }
 
