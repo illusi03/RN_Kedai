@@ -8,6 +8,9 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 * Lama waktu berdiam dimeja (Finished time / Time spent) masih belum terselesaikan
 * Belum tersedia fitur Searching dan sorting
 
+## GIF Aplikasi
+![Kedai_PapaLapar](https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Kedai_papalapar.gif)
+
 ## Gambar Aplikasi
 <p float="left">
   <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-42-16.png" width="200" height="350" alt="Choose a Service Type"/>
