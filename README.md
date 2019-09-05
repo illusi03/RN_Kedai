@@ -1,6 +1,7 @@
 ## Keterangan Aplikasi
 Nama aplikasi ini adalah "PapaLapar" , Aplikasi komputasi dari pemesanan makanan di restoran. (Aplikasi POS dari Makanan. Point Of Sale).
 <br>
+*NOTE : LINK DEMO APLIKASI ADA DIPALING BAWAH
 
 ## Penting untuk dibaca
 Aplikasi ini adalah salah satu Pengerjaan dari bootcamp Arkademy. 
