@@ -43,7 +43,7 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 [![Download](https://i1.wp.com/apkmodsios.com/wp-content/uploads/2018/12/Download-Infinite-Design-3.4.10-Apk.png)](https://drive.google.com/open?id=1ytcVtKAwJviJk7o6jWp7XYVr5myjTZrp)
 
 ## Slide Powerpoint
-[![PPT_Download](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkr9uS8XSoy-y837-FEFZHbWOoPTnGI-qXjZmiZVrtq9ghe6_z)](http://google.com)
+[![PPT_Download](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/265_Powerpoint_logo-128.png)](http://google.com)
 
 ----
 
