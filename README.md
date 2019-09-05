@@ -42,7 +42,8 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 ## Download App (Demo usage only)
 [![Download](https://i1.wp.com/apkmodsios.com/wp-content/uploads/2018/12/Download-Infinite-Design-3.4.10-Apk.png)](https://drive.google.com/open?id=1ytcVtKAwJviJk7o6jWp7XYVr5myjTZrp)
 
-[![PPT_Download](https://cdn.imgbin.com/19/8/11/imgbin-microsoft-powerpoint-computer-software-microsoft-office-2013-presentation-program-ppt-JeUh8bTupVutaicHBX2QHtuyp.jpg)](http://google.com)
+## Slide Powerpoint
+[![PPT_Download](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkr9uS8XSoy-y837-FEFZHbWOoPTnGI-qXjZmiZVrtq9ghe6_z)](http://google.com)
 
 ----
 
