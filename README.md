@@ -5,7 +5,7 @@ This application is called "PapaLapar" , the computing application of ordering f
 ### Demo App
 [![Download](https://camo.githubusercontent.com/a9c59dcbf62ec123e8bb099fb473ad30554d70e6/68747470733a2f2f69312e77702e636f6d2f61706b6d6f6473696f732e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031382f31322f446f776e6c6f61642d496e66696e6974652d44657369676e2d332e342e31302d41706b2e706e67 "Download")](https://drive.google.com/open?id=1ceQFM-YF7DMgU9rGhdgNbaP2z88CQnAw)
 ### Presentation
-[![PPT_Download](https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_c989113cd8c8cb88da7510f7c1edba01/microsoft-powerpoint.png "Download")](https://drive.google.com/open?id=1srWCytxfRm5SssRCTxwXGU_eXhH01VKg)
+[![PPT_Download](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/265_Powerpoint_logo-128.png)](https://drive.google.com/open?id=1srWCytxfRm5SssRCTxwXGU_eXhH01VKg)
 
 ### GIF Application
 <p float="center">
