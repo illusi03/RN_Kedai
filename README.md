@@ -83,7 +83,7 @@ Ikuti tahapan demi tahapan untuk menginstall Aplikasi
 ### Follow Me
 
 <p>
-    <a href="tell:082216829355" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=6282216829355" target="_blank">
         <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c543.png" width="100" alt=""/>
     </a>
     <a href="https://www.linkedin.com/in/m-azhary-5280a5192/" target="_blank">
