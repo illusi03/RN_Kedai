@@ -2,7 +2,7 @@
 This application is called "PapaLapar" , the computing application of ordering food (Mobile based , on the restaurant)
 <br>
 
-## Download App and Slideshow
+### Download App and Slideshow
 <p>
   
 [![Download](https://i1.wp.com/apkmodsios.com/wp-content/uploads/2018/12/Download-Infinite-Design-3.4.10-Apk.png)](https://drive.google.com/open?id=1ceQFM-YF7DMgU9rGhdgNbaP2z88CQnAw)
@@ -10,10 +10,10 @@ This application is called "PapaLapar" , the computing application of ordering f
 
 </p>
 
-## GIF Application
+### GIF Application
 ![Kedai_PapaLapar](https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Kedai_papalapar.gif)
 
-## Example Image (Application)
+### Example Image (Application)
 <p float="left">
   <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-42-16.png" width="200" height="350" alt="Choose a Service Type"/>
   <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-42-55.png" width="200" height="350" alt="Pick Location"/>
@@ -27,7 +27,7 @@ This application is called "PapaLapar" , the computing application of ordering f
   <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-45-20.png" width="200" height="350" alt="Order History"/>
 </p>
 
-## Folder Structure
+### Folder Structure
 
 ```
 RN_Kedai/
@@ -63,7 +63,7 @@ Ikuti tahapan demi tahapan untuk menginstall Aplikasi
 5. React Native CLI
 6. Backend 
 
-## Why PapaLapar
+### Why PapaLapar
 * Pemesanan Menu menjadi lebih mudah dan terstruktur 
 * Sudah tervalidasi setiap aksi dari aplikasi
 * Menggunakan React native , jadi aplikasi mendukung platform android dan iOS secara otomatis
