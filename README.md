@@ -3,7 +3,7 @@ This application is called "PapaLapar" , the computing application of ordering f
 <br>
 
 ### Download App and Slideshow
-<p>
+<p float="center">
   
 [![Download](https://i1.wp.com/apkmodsios.com/wp-content/uploads/2018/12/Download-Infinite-Design-3.4.10-Apk.png)](https://drive.google.com/open?id=1ceQFM-YF7DMgU9rGhdgNbaP2z88CQnAw)
 [![PPT_Download](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/265_Powerpoint_logo-128.png)](https://drive.google.com/open?id=1srWCytxfRm5SssRCTxwXGU_eXhH01VKg)
@@ -11,7 +11,11 @@ This application is called "PapaLapar" , the computing application of ordering f
 </p>
 
 ### GIF Application
+<p float="center">
+
 ![Kedai_PapaLapar](https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Kedai_papalapar.gif)
+
+</p>
 
 ### Example Image (Application)
 <p float="left">
@@ -66,8 +70,8 @@ $ yarn start2 #For running On Android Devices
 ```
 
 **Backend:**
-Make sure your PC already installed Express JS : 
 ```
+# Make sure your PC already installed Express JS : 
 $ git clone https://github.com/illusi03/Express_Kedai.git
 $ cd Express_Kedai
 $ yarn install
