@@ -17,7 +17,7 @@ This application is called "PapaLapar" , the computing application of ordering f
 <p float="left">
   <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-42-16.png" width="200" height="350" alt="Choose a Service Type"/>
   <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-42-55.png" width="200" height="350" alt="Pick Location"/>
-  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-44-38.png" width="200" height="350" alt="Finding the truck"/>
+  <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-44-38.png" width="200" height="350" alt="inding the truck"/>
   <img src="https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Screenshot_2019-09-03-08-44-45.png" width="200" height="350" alt="Order History"/>
 </p>
 <p float="left">
@@ -53,34 +53,43 @@ RN_Kedai/
     ...
 ```
 
-### Installation and Configuration : 
-Ikuti tahapan demi tahapan untuk menginstall Aplikasi 
+## Installation and Configuration : 
+Follow these step to install
 
-1. Node JS
-2. JDK 8
-3. Android Studio with SDK Platform minimal versi 28
-4. Emulator / Smartphone Android
-5. React Native CLI
-6. Backend 
+**Frontend:**
+```
+$ git clone https://github.com/illusi03/RN_Kedai.git
+$ cd RN_Kedai
+$ yarn install
+$ yarn start1 #For init Jetifier(Android-X Support)
+$ yarn start2 #For running On Android Devices
+```
 
-### Why PapaLapar
-* Pemesanan Menu menjadi lebih mudah dan terstruktur 
-* Sudah tervalidasi setiap aksi dari aplikasi
-* Menggunakan React native , jadi aplikasi mendukung platform android dan iOS secara otomatis
-* Code yang simpel sehingga anda bisa berkontribusi untuk projek ini
+**Backend:**
+Make sure your PC already installed Express JS : 
+```
+$ git clone https://github.com/illusi03/Express_Kedai.git
+$ cd Express_Kedai
+$ yarn install
+$ nodemon index #run your Express JS on http://localhost:5000
+```
 
-## 
-* Pastikan sudah terinstall Node.js di sistem anda https://nodejs.org/
-* Sudah disetup-nya backend / RESTFull API (Express yang disediakan digithub)
-* Lalu install React Native https://facebook.github.io/react-native/
+### Why PapaLapar ?
+* Order manajemen is more structured and easly for manage
+* Already validated every action from the application
+* Using React Native Technology , so it support android & iOS by default!
+* Simple Code, so you can easily contribute on it.
+
+### Prerequisites
+* Make sure You had been install NodeJs in your system https://nodejs.org/
+* Then install React Native https://facebook.github.io/react-native/
 
 ## Contact
 * WA/TELEGRAM : +62 822 1682 9355
 * EMAIL : mohammad.azhari12@gmail.com
 
 ----
-
-### Follow Me
+## Follow Me
 
 <p>
     <a href="https://api.whatsapp.com/send?phone=6282216829355" target="_blank">
@@ -93,9 +102,3 @@ Ikuti tahapan demi tahapan untuk menginstall Aplikasi
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="100" alt=""/>
     </a>
 </p>
-
-## Lisensi
-
-BSD 3-Clause License
-
-See [LICENSE](LICENSE)
