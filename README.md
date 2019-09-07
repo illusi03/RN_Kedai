@@ -2,7 +2,7 @@
 This application is called "PapaLapar" , the computing application of ordering food (Mobile based , on the restaurant)
 <br>
 
-### Download App and Slideshow
+### Demo App
 <p float="center">
   
 [![Download](https://i1.wp.com/apkmodsios.com/wp-content/uploads/2018/12/Download-Infinite-Design-3.4.10-Apk.png)](https://drive.google.com/open?id=1ceQFM-YF7DMgU9rGhdgNbaP2z88CQnAw)
