@@ -1,9 +1,9 @@
-initialState = {
+initialStateMenu = {
   dataItem: '',
   isLoading: true
 }
 
-export default Menu = (state = initialState, action) => {
+export default Menu = (state = initialStateMenu, action) => {
   switch (action.type) {
     //Untuk Menus Umum
     case 'GET_MENU_PENDING':

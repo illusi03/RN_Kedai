@@ -1,9 +1,9 @@
-initialState = {
+initialStateCategory = {
   dataItem: '',
   isLoading: true
 }
 
-export default Category = (state = initialState, action) => {
+export default Category = (state = initialStateCategory, action) => {
   switch (action.type) {
     //Untuk Category Master 
     case 'GET_CATEGORY_PENDING':

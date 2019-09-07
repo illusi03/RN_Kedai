@@ -50,13 +50,7 @@ class ScreenPay extends Component {
             justifyContent: 'flex-start',
             alignItems: 'center'
           }]}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-              <TouchableOpacity
-                style={{ alignSelf: 'flex-start' }}
-                onPress={() => BackHandler.exitApp()}
-              >
-                <IconIon name='md-arrow-round-back' size={33}></IconIon>
-              </TouchableOpacity>
+            <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
               <Text style={[Styles.hurufKonten, {
                 fontSize: 20,
                 fontWeight: 'bold',
@@ -125,14 +119,6 @@ class ScreenPay extends Component {
               }]}>
                 Thank you
               </Text>
-              {/* <Text style={[Styles.hurufKonten, {
-                fontSize: 17,
-                fontWeight: 'bold',
-                marginBottom: 25,
-                textAlign: 'center'
-              }]}>
-                Press back to clear Internal storage and new transaction
-              </Text> */}
               <Text style={[Styles.hurufKonten, {
                 fontSize: 16,
                 fontWeight: 'bold',
@@ -145,6 +131,21 @@ class ScreenPay extends Component {
               }]}>
                 {this.props.Home.timerString}
               </Text>
+              <TouchableOpacity style={[Styles.cardSimpleContainer,{
+                backgroundColor:Color.darkPrimaryColor,
+                width:100,
+                height:50,
+                justifyContent:'center',
+                padding:10,
+                marginTop:10
+              }]}
+              onPress={()=> BackHandler.exitApp()}
+              >
+                <Text style={[Styles.hurufKonten,{
+                  textAlign:'center',
+                  color:Color.whiteColor
+                }]}> DONE </Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>

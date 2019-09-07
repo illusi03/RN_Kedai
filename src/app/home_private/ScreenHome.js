@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity, FlatList, Image, ScrollView, ActivityIndi
 import IconIon from 'react-native-vector-icons/Ionicons'
 import IconAntDesign from 'react-native-vector-icons/AntDesign'
 import IconMaterialCom from 'react-native-vector-icons/MaterialCommunityIcons'
+import IconMaterial from 'react-native-vector-icons/MaterialIcons'
 import axios from 'axios'
 import Constanta, { convertToRupiah } from '../../res/Constant'
 
@@ -23,7 +24,8 @@ class ScreenHome extends Component {
     idTransaction: 0,
     initNameCategory: 'All',
     startedMenus: [],
-    toogleStarted: ''
+    toogleStarted: '',
+    isLoadingTambah: false
   }
 
   convertIntToTime = (given_seconds) => {
@@ -74,6 +76,9 @@ class ScreenHome extends Component {
   aksiAddOrderMenus = async (menuId, transactionId) => {
     //Cari data Jika isPaid false , Input Order.
     //Cek Data Transaksi (Apakah sudah STATUS PAID / BELUM)
+    await this.setState({
+      isLoadingTambah: true
+    })
     let transaksiData
     let menuData
     try {
@@ -142,7 +147,6 @@ class ScreenHome extends Component {
   }
 
   componentDidMount() {
-    let timerHandlenya = 
     this.getNoMeja()
     this.props.dispatch(getMenu())
     this.props.dispatch(getCategory())
@@ -250,20 +254,23 @@ class ScreenHome extends Component {
                     borderWidth: 2,
                     borderColor: Color.darkPrimaryColor
                   }]}>
+
+                    {!this.state.isLoadingTambah ?
                     <TouchableOpacity style={{
                       position: 'absolute',
                       right: 10,
                       top: 10
                     }}
                       onPress={() => this.aksiAddOrderMenus(item.id, this.state.idTransaction)}
-                      onLongPress={() => alert('Long Pressed')}
                     >
-                      <IconMaterialCom
-                        name='bookmark-multiple-outline'
+                      <IconMaterial
+                        name='add-shopping-cart'
                         size={30}
                         color={Color.accentColor}
-                      ></IconMaterialCom>
+                      ></IconMaterial>
                     </TouchableOpacity>
+                    : false}
+
                     <Image source={{ uri: item.image }} style={{
                       width: 100,
                       height: '100%',
@@ -284,6 +291,7 @@ class ScreenHome extends Component {
                       }]}>
                         {convertToRupiah(item.price)}</Text>
                     </View>
+
                   </View>
                 )}
               />
@@ -352,9 +360,8 @@ const mapStateToProps = (state) => {
   return {
     Menu: state.Menu,
     Category: state.Category,
-    Transaction: state.Transaction,
-    Order: state.Order,
-    Home: state.Home
+    Home: state.Home,
+    Order: state.Order
   }
 }
 

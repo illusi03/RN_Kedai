@@ -19,12 +19,16 @@ class ScreenCart extends Component {
   state = {
     tableNumber: '',
     isAdaBarang: false,
-    isLoading: true
+    isLoading: true,
+    isLoadingAddOrRemove:false
   }
   aksiAddOrderMenus = async (menuId, transactionId) => {
     //Cari data Jika isPaid false , Input Order.
     //Cek Data Transaksi (Apakah sudah STATUS PAID / BELUM)
-
+    await this.setState({
+      isLoadingAddOrRemove:true
+    })
+    
     try {
       let transaksiData
       let menuData
@@ -52,6 +56,9 @@ class ScreenCart extends Component {
       } else {
         alert('Sudah Bayar')
       }
+      await this.setState({
+        isLoadingAddOrRemove:this.props.Transaction.isLoading
+      })
     } catch (e) {
       console.log(e)
     }
@@ -59,6 +66,9 @@ class ScreenCart extends Component {
   aksiRemoveOrderMenus = async (menuId, transactionId) => {
     //Cari data Jika isPaid false , Input Order.
     //Cek Data Transaksi (Apakah sudah STATUS PAID / BELUM)
+    await this.setState({
+      isLoadingAddOrRemove:true
+    })
 
     try {
       let transaksiData
@@ -106,6 +116,9 @@ class ScreenCart extends Component {
           })
         }
       }
+      await this.setState({
+        isLoadingAddOrRemove:this.props.Transaction.isLoading
+      })
     } catch (e) {
       console.log(e)
     }
@@ -160,7 +173,7 @@ class ScreenCart extends Component {
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <TouchableOpacity
               style={{ flex: 1, alignSelf: 'flex-start' }}
-              onPress={()=> this.props.navigation.navigate('ScreenHome')}
+              onPress={() => this.props.navigation.navigate('ScreenHome')}
             >
               <IconIon name='md-arrow-round-back' size={32}></IconIon>
             </TouchableOpacity>
@@ -219,14 +232,19 @@ class ScreenCart extends Component {
                       height: 100,
                       flex: 1
                     }]}>
-                      <TouchableOpacity
-                        onPress={() => this.aksiRemoveOrderMenus(item.menu.id, this.props.Transaction.dataItem.id)}
-                      >
-                        <IconFa name='minus-square' color={Color.darkPrimaryColor} size={23} style={{
-                          paddingRight: 10,
-                          paddingLeft: 10
-                        }}></IconFa>
-                      </TouchableOpacity>
+
+                      {!this.state.isLoadingAddOrRemove ?
+                        <TouchableOpacity
+                          onPress={() => this.aksiRemoveOrderMenus(item.menu.id, this.props.Transaction.dataItem.id)}
+                        >
+                          <IconFa name='minus-square' color={Color.darkPrimaryColor} size={23} style={{
+                            paddingRight: 10,
+                            paddingLeft: 10
+                          }}></IconFa>
+                        </TouchableOpacity>
+                        :
+                        <ActivityIndicator size={20} style={{ paddingHorizontal: 10 }}></ActivityIndicator>
+                      }
                       <Image source={{ uri: item.menu.image }} style={{
                         width: 100,
                         height: '100%',
@@ -253,14 +271,18 @@ class ScreenCart extends Component {
                         }]}>
                           ({convertToRupiah(item.menu.price * item.qty)})</Text>
                       </View>
-                      <TouchableOpacity
-                        onPress={() => this.aksiAddOrderMenus(item.menu.id, this.props.Transaction.dataItem.id)}
-                      >
-                        <IconFa name='plus-square' color={Color.darkPrimaryColor} size={23} style={{
-                          paddingRight: 10,
-                          paddingLeft: 10
-                        }}></IconFa>
-                      </TouchableOpacity>
+                      {!this.state.isLoadingAddOrRemove ?
+                        <TouchableOpacity
+                          onPress={() => this.aksiAddOrderMenus(item.menu.id, this.props.Transaction.dataItem.id)}
+                        >
+                          <IconFa name='plus-square' color={Color.darkPrimaryColor} size={23} style={{
+                            paddingRight: 10,
+                            paddingLeft: 10
+                          }}></IconFa>
+                        </TouchableOpacity>
+                        :
+                        <ActivityIndicator size={20} style={{ paddingHorizontal: 10 }}></ActivityIndicator>
+                      }
                       <View style={{
                         position: 'absolute',
                         right: -5,

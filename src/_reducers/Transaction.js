@@ -1,11 +1,11 @@
-initialState = {
+initialStateTransaction = {
   dataItem: '',
   message: '',
   isLoading: true,
   dataAsli: ''
 }
 
-export default Transaction = (state = initialState, action) => {
+export default Transaction = (state = initialStateTransaction, action) => {
   switch (action.type) {
     //Untuk Transaction ADD 
     case 'ADD_TRANSACTION_PENDING':

@@ -1,10 +1,10 @@
-initialState = {
+initialStateOrder = {
   dataItem: '',
   isLoading: true,
   subTotalOrder: 0
 }
 
-export default Order = (state = initialState, action) => {
+export default Order = (state = initialStateOrder, action) => {
   switch (action.type) {
     //Untuk Order Master ADD
     case 'ADD_ORDER_PENDING':
@@ -32,7 +32,7 @@ export default Order = (state = initialState, action) => {
     case 'GET_ORDER_PENDING':
       return {
         ...state,
-        isLoading: false
+        isLoading: true
       }
       break
     case 'GET_ORDER_FULFILLED':
