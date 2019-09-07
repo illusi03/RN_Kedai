@@ -3,12 +3,6 @@ Nama aplikasi ini adalah "PapaLapar" , Aplikasi komputasi dari pemesanan makanan
 <br>
 *NOTE : LINK DEMO APLIKASI ADA DIPALING BAWAH
 
-## Penting untuk dibaca
-Aplikasi ini adalah salah satu Pengerjaan dari bootcamp Arkademy. 
-Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum terselesaikan , Antara lain : 
-* Lama waktu berdiam dimeja (Finished time / Time spent) masih belum terselesaikan
-* Belum tersedia fitur Searching dan sorting
-
 ## GIF Aplikasi
 ![Kedai_PapaLapar](https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Kedai_papalapar.gif)
 
@@ -27,7 +21,7 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 </p>
 
 ## Fitur 
-* Terdapat list menu berdasarkan kategori
+* Pemesanan Menu menjadi lebih mudah dan terstruktur 
 * Sudah tervalidasi setiap aksi dari aplikasi
 
 ## 
