@@ -1,12 +1,10 @@
 ## Keterangan Aplikasi
-Nama aplikasi ini adalah "PapaLapar" , Aplikasi komputasi dari pemesanan makanan di restoran. (Aplikasi POS dari Makanan. Point Of Sale).
+Nama aplikasi ini adalah "PapaLapar" , Aplikasi komputasi dari pemesanan makanan (Secara Mobile , Untuk di meja restoran).
 <br>
+*NOTE : LINK DEMO APLIKASI ADA DIPALING BAWAH
 
-## Penting untuk dibaca
-Aplikasi ini adalah salah satu Pengerjaan dari bootcamp Arkademy. 
-Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum terselesaikan , Antara lain : 
-* Lama waktu berdiam dimeja (Finished time / Time spent) masih belum terselesaikan
-* Belum tersedia fitur Searching dan sorting
+## GIF Aplikasi
+![Kedai_PapaLapar](https://github.com/illusi03/RN_Kedai/blob/master/Screenshots/Kedai_papalapar.gif)
 
 ## Gambar Aplikasi
 <p float="left">
@@ -23,7 +21,7 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 </p>
 
 ## Fitur 
-* Terdapat list menu berdasarkan kategori
+* Pemesanan Menu menjadi lebih mudah dan terstruktur 
 * Sudah tervalidasi setiap aksi dari aplikasi
 
 ## 
@@ -35,9 +33,13 @@ Aplikasi ini masih tahap test , dengan kata lain masih terdapat fitur yang belum
 * WA/TELEGRAM: +62 822 1682 9355
 * email: mohammad.azhari12@gmail.com
 
-## Download App (Demo usage only)
-[![Iyat Download](https://i1.wp.com/apkmodsios.com/wp-content/uploads/2018/12/Download-Infinite-Design-3.4.10-Apk.png)](http://google.com)
+## Download App (Hanya Demo) dan File slide powerpoint 
+<p>
+  
+[![Download](https://i1.wp.com/apkmodsios.com/wp-content/uploads/2018/12/Download-Infinite-Design-3.4.10-Apk.png)](https://drive.google.com/open?id=1ceQFM-YF7DMgU9rGhdgNbaP2z88CQnAw)
+[![PPT_Download](https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/265_Powerpoint_logo-128.png)](https://drive.google.com/open?id=1srWCytxfRm5SssRCTxwXGU_eXhH01VKg)
 
+</p>
 
 ----
 
