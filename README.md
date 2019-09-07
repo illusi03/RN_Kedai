@@ -1,5 +1,5 @@
 ## Keterangan Aplikasi
-Nama aplikasi ini adalah "PapaLapar" , Aplikasi komputasi dari pemesanan makanan di restoran. (Aplikasi POS dari Makanan. Point Of Sale).
+Nama aplikasi ini adalah "PapaLapar" , Aplikasi komputasi dari pemesanan makanan (Secara Mobile , Untuk di meja restoran).
 <br>
 *NOTE : LINK DEMO APLIKASI ADA DIPALING BAWAH
 
