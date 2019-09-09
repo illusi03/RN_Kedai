@@ -126,6 +126,9 @@ class ScreenHome extends Component {
     } else {
       alert('Sudah Bayar')
     }
+    await this.setState({
+      isLoadingTambah: false
+    })
   }
   //Tahap Percobaan
   setStartedMenus = (menuId) => {
@@ -239,6 +242,7 @@ class ScreenHome extends Component {
               :
               <FlatList
                 data={this.props.Menu.dataItem}
+                extraData={this.state.isLoadingTambah}
                 showsVerticalScrollIndicator={true}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
@@ -269,7 +273,13 @@ class ScreenHome extends Component {
                         color={Color.accentColor}
                       ></IconMaterial>
                     </TouchableOpacity>
-                    : false}
+                    : 
+                    <ActivityIndicator style={{
+                      position: 'absolute',
+                      right: 10,
+                      top: 10
+                    }}></ActivityIndicator>
+                    }
 
                     <Image source={{ uri: item.image }} style={{
                       width: 100,
