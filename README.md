@@ -1,7 +1,10 @@
 ## About Application
 This application is called "PapaLapar" , the computing application of ordering food (Mobile based , on the restaurant).
-The lastest version of this application is release. 
-THIS LINK FOR LASTEST VERSION (PAPALAPAR) <a href='https://github.com/illusi03/kedaiP/'>CLICK ME</a>
+The lastest version of this application is release. <br>
+<b><h3>
+  THIS LINK FOR LASTEST VERSION (PAPALAPAR) <a href='https://github.com/illusi03/kedaiP/'>CLICK ME</a>
+  </h3>
+</b>
 <br>
 
 ### Demo App
